@@ -3,10 +3,9 @@ FROM node:14-alpine as build
 
 WORKDIR /app/frontend
 
-COPY package.json package-lock.json ./
+COPY . .
 RUN npm install
 
-COPY . .
 RUN npm run build
 
 # Stage 2: Serve React application with Nginx
